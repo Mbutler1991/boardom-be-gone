@@ -25,9 +25,67 @@
 
 <body>
 
-    <nav>
-        
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Board Game Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCardGames" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Card Games</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCardGames">
+                            <li><a class="dropdown-item" href="#">Yu Gi Oh</a></li>
+                            <li><a class="dropdown-item" href="#">Pokemon</a></li>
+                            <li><a class="dropdown-item" href="#">Magic The Gathering</a></li>
+                            <li><a class="dropdown-item" href="#">Cards Against Humanity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTabletopGames" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Tabletop Games</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownTabletopGames">
+                            <li><a class="dropdown-item" href="#">RPG</a></li>
+                            <li><a class="dropdown-item" href="#">World Building</a></li>
+                            <li><a class="dropdown-item" href="#">Wargame</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownStrategyGames" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Strategy Games</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownStrategyGames">
+                            <li><a class="dropdown-item" href="#">Chess</a></li>
+                            <li><a class="dropdown-item" href="#">Checkers</a></li>
+                            <li><a class="dropdown-item" href="#">Backgammon</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFamilyGames" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Family Games</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownFamilyGames">
+                            <li><a class="dropdown-item" href="#">Just for Fun</a></li>
+                            <li><a class="dropdown-item" href="#">Board Games</a></li>
+                            <li><a class="dropdown-item" href="#">Card Games</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Special Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
 
     <main class="flex-shrink-0 main-bg">
 
@@ -37,12 +95,12 @@
     </main>
 
     <footer>
-        
+
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 
