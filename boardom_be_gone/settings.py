@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', os.environ.get('DJANGO_ALLOWED_HOSTS')]
+ALLOWED_HOSTS = ['127.0.0.1', 'https://boardom-be-gone-92a7cf5b2b91.herokuapp.com/']
 
 
 # Application definition
