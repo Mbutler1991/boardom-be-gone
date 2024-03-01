@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn boardom-be-gone.wsgi
