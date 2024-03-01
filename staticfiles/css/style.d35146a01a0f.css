@@ -1,0 +1,12 @@
+body {
+    min-height: 100vh;
+    background-image: url("../images/parchment.9666c012c3a0.jpg");
+}
+
+main {
+    min-height: 82%;
+}
+
+footer {
+    bottom: 0;
+}
