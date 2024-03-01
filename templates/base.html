@@ -27,7 +27,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Board Game Shop</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Boardom Be Gone</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -76,7 +76,7 @@
                         <a class="nav-link" href="#">Special Offers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
@@ -88,6 +88,14 @@
 
 
     <main class="flex-shrink-0 main-bg">
+
+        <div class="row">
+            <div class="col-12 my-3 text-center">
+                <h1>Boardom Be Gone</h1>
+                <p class="lead border-bottom border-dark border-2 pb-3">The best place for your favourite and for new board games to enjoy with friends or family.
+                </p>
+            </div>
+        </div>
 
         {% block content %}
         {% endblock content %}
