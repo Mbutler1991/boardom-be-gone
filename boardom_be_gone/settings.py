@@ -24,7 +24,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mw2@*43#f03qd8b0wpairgz=6e7sp*=l^-%_x7xq&eh8ef8r&5'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -92,8 +92,6 @@ WSGI_APPLICATION = 'boardom_be_gone.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 # Password validation
