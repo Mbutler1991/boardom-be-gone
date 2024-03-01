@@ -1,1 +1,1 @@
-web: gunicorn boardom-be-gone.wsgi
+web: gunicorn boardom_be_gone.wsgi
