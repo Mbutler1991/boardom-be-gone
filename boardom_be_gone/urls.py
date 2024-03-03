@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from products import views
 
 urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path("contact/", include("contact.urls"), name="contact-urls"),
+    path('section/<int:section_id>/subsection/<int:subsection_id>/', views.subsection_detail, name='subsection_detail'),
     path("", include("home.urls"), name="home-urls"),
 ]
