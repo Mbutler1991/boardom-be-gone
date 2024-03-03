@@ -6,15 +6,21 @@
 
 <h1 class="text-center">{{ subsection.name }}</h1>
 
-<div class="g-4">
+<div class="container">
+    <div class="row justify-content-center">
     {% for product in products %}
-    <div class="col-12 col-md-12 col-lg-6 mb-2 ml-0 mr-0 m-md-5 bg-dark">
+    <div class="col-10 col-lg-5 m-1">
         <div class="card text-center">
-            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src=" {{ product.image.url }}" alt="{{ product.title }}"></a>
+            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top resize" src="{{ product.image.url }}" alt="{{ product.title }}"></a>
             <div class="card-body bg-dark text-white">
                 <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
-                <p class="card-text">Rating: {{ product.rating }}</p>
-                <p class="card-text">Price: ${{ product.price }}</p>
+                {% if product.in_stock %}
+                    <p class="card-text text-success">Item in stock</p>
+                {% else %}
+                    <p class="card-text text-danger">Sorry, item is not in stock. Please check back later.</p>
+                {% endif %}
+                <p class="card-text"><i data-star="{{ product.rating }}"></i></p>
+                <p class="card-text">Price: €{{ product.price }}</p>
                 <a class="btn btn-secondary" href="{% url 'product_detail' product.id %}">View Details</a>
             </div>
         </div>

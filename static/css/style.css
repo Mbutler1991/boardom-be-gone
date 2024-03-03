@@ -27,6 +27,11 @@ a {
     cursor: pointer;
 }
 
+.resize {
+    max-height: 180px;
+    width: auto;
+}
+
 /* star rating taken from https://codepen.io/4m6/pen/wvqEzEr */
 
 [data-star] {

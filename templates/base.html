@@ -19,11 +19,11 @@
     <title>Boardom Be Gone</title>
 
     <!-- meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <meta name="description" content="Boardom Be Gone - A place to find new games to play">
-    <meta name="keywords" content="Board Games, Card Games, Tabletop Games, Games, Fun, Family, Friends">
-    <meta name="author" content="Mark Butler" />
+    <meta name="keywords" content="Board Games, Card Games, Tabletop Games, dnd, cards, games">
+    <meta name="author" content="Mark Butler">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
         rel="stylesheet">
 
     <!-- favicon -->
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.jpg' %}" type="image/x-icon">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -66,8 +66,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ section.name }}">
                             {% for subsection in subsections %}
                             <li class="dropdown-item"><a
-                                    href="{% url 'subsection_detail' section.id subsection.id %}">{{ subsection.name
-                                    }}</a></li>
+                                    href="{% url 'subsection_detail' section.id subsection.id %}">{{ subsection.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
@@ -136,7 +135,7 @@
     </main>
 
     <!-- footer -->
-    <footer class="footer mt-auto py-3 bg-dark text-white">
+    <footer class="footer mt-5 py-3 bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
