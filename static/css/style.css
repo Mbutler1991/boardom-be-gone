@@ -21,3 +21,8 @@ p {
     font-weight: bold;
     font-size: 150%;
 }
+
+.prod {
+    max-height: 20vh;
+    max-width: 20vw;
+}

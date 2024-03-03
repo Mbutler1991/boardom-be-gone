@@ -1,23 +1,24 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 <h1 class="text-center">{{ subsection.name }}</h1>
 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        {% for product in products %}
-            <div class="col">
-                <div class="card">
-                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.rating }}</p>
-                        <p class="card-text">Price: ${{ product.price }}</p>
-                
-                    </div>
-                </div>
+<div class="g-4">
+    {% for product in products %}
+    <div class="col-12 col-md-12 col-lg-6 mb-2 ml-0 mr-0 m-md-5 bg-dark">
+        <div class="card">
+            <img class="card-img-top" src=" {{ product.image.url }}" alt="{{ product.title }}">
+            <div class="card-body bg-dark text-white">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">Rating: {{ product.rating }}</p>
+                <p class="card-text">Price: ${{ product.price }}</p>
             </div>
-        {% endfor %}
+        </div>
     </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

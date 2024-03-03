@@ -17,4 +17,4 @@ def section_detail(request, section_id):
 def subsection_detail(request, section_id, subsection_id):
     subsection = get_object_or_404(Subsection, pk=subsection_id)
     products = Product.objects.filter(subsections=subsection)
-    return render(request, 'subsection_detail.html', {'subsection': subsection})
+    return render(request, 'subsection_detail.html', {'subsection': subsection, 'products': products})
