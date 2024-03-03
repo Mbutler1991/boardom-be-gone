@@ -17,15 +17,21 @@
 
 <head>
     <title>Boardom Be Gone</title>
+
+    <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="description" content="Boardom Be Gone - A place to find new games to play">
     <meta name="keywords" content="Board Games, Card Games, Tabletop Games, Games, Fun, Family, Friends">
     <meta name="author" content="Mark Butler" />
+
+    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
+
+    <!-- favicon -->
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 
     <!-- Font Awesome CSS -->
@@ -34,12 +40,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
 <body class="vh-100">
 
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">Boardom Be Gone</a>
@@ -56,7 +65,9 @@
                             data-bs-toggle="dropdown" aria-expanded="false">{{ section.name }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ section.name }}">
                             {% for subsection in subsections %}
-                            <li class="dropdown-item"><a href="{% url 'subsection_detail' section.id subsection.id %}">{{ subsection.name }}</a></li>
+                            <li class="dropdown-item"><a
+                                    href="{% url 'subsection_detail' section.id subsection.id %}">{{ subsection.name
+                                    }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
@@ -98,11 +109,8 @@
         </div>
     </nav>
 
-
-
-
-    <main class="flex-shrink-0 main-bg">
-
+    <!-- header -->
+    <header>
         <div class="row">
             <div class="col-12 my-3 text-center">
                 <h1>Boardom Be Gone</h1>
@@ -111,6 +119,12 @@
                 </p>
             </div>
         </div>
+    </header>
+
+
+    <main class="flex-shrink-0 main-bg">
+
+        <!-- messages -->
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
             {{ message }}
@@ -121,6 +135,7 @@
 
     </main>
 
+    <!-- footer -->
     <footer class="footer mt-auto py-3 bg-dark text-white">
         <div class="container">
             <div class="row">
@@ -133,9 +148,12 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
+
+    <!-- Custom JS -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 

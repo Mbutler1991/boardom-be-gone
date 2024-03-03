@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<h1 class="text-center">{{ product.name }}</h1>
+
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-6 border border-dark rounded-lg p-3">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <p>Price: €{{ product.price }}</p>
+            <!-- star rating taken from https://codepen.io/4m6/pen/wvqEzEr-->
+            <p>Rating: {{ product.rating }} <i data-star="{{ product.rating }}"></i></p>
+            <p>{{ product.description }}</p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

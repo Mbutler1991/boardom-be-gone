@@ -9,12 +9,13 @@
 <div class="g-4">
     {% for product in products %}
     <div class="col-12 col-md-12 col-lg-6 mb-2 ml-0 mr-0 m-md-5 bg-dark">
-        <div class="card">
-            <img class="card-img-top" src=" {{ product.image.url }}" alt="{{ product.title }}">
+        <div class="card text-center">
+            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src=" {{ product.image.url }}" alt="{{ product.title }}"></a>
             <div class="card-body bg-dark text-white">
-                <h5 class="card-title">{{ product.name }}</h5>
+                <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
                 <p class="card-text">Rating: {{ product.rating }}</p>
                 <p class="card-text">Price: ${{ product.price }}</p>
+                <a class="btn btn-secondary" href="{% url 'product_detail' product.id %}">View Details</a>
             </div>
         </div>
     </div>
