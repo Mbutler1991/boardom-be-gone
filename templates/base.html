@@ -84,7 +84,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == saved_for_later_url %}active{% endif %}"
-                            aria-current="page" href="#">Saved for Later</a>
+                            aria-current="page" href="{% url 'saved_for_later' %}">Saved for Later</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == orders_url %}active{% endif %}" aria-current="page"

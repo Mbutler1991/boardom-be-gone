@@ -27,6 +27,7 @@ urlpatterns = [
     path('product/create/', views.product_create, name='product_create'),
     path('product/<int:product_id>/update/', views.product_update, name='product_update'),
     path('product/<int:product_id>/delete/', views.product_delete, name='product_delete'),
+    path("saved/", include("saved.urls"), name="saved-urls"),
     path('section/<int:section_id>/subsection/<int:subsection_id>/', views.subsection_detail, name='subsection_detail'),
     path("", include("home.urls"), name="home-urls"),
 ]

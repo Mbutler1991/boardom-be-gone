@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="text-center">Your Saved Items</h1>
+{% if saved_items %}
+<ul>
+    {% for item in saved_items %}
+    <div class="container py-3 border-bottom border-dark">
+        <li>
+            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100">
+            <h2>{{ item.product.name }}</h2>
+            <p>Price: €{{ item.product.price }}</p>
+            <p>Description: {{ item.product.description }}</p>
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-primary" type="submit">Buy Now</button>
+            </form>
+            <form method="post" action="{% url 'remove_from_saved' saved_id=item.id %}">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Remove</button>
+            </form>
+        </li>
+    </div>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="text-center">No saved items, click saved for later on a product to add it here.</p>
+{% endif %}
+
+{% endblock %}
