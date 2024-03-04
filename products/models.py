@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator
 from cloudinary.models import CloudinaryField
 
 class Section(models.Model):
@@ -19,7 +20,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = CloudinaryField('image', default='placeholder')
-    rating = models.DecimalField(max_digits=3, decimal_places=2)
+    rating = models.DecimalField(max_digits=3, decimal_places=2, validators=[MaxValueValidator(5.0)])
     in_stock = models.BooleanField(default=True)
     sections = models.ManyToManyField(Section)
     subsections = models.ManyToManyField(Subsection)
