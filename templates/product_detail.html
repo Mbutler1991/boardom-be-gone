@@ -16,11 +16,15 @@
             <p>Rating: {{ product.rating }} <i data-star="{{ product.rating }}"></i></p>
             <p>{{ product.description }}</p>
             {% if product.in_stock %}
-                <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-primary">Buy Now</a>
             {% else %}
-                <p class="text-danger">Sorry, this item is currently out of stock.</p>
+            <p class="text-danger">Sorry, this item is currently out of stock.</p>
             {% endif %}
             <a href="#" class="btn btn-secondary">Save for Later</a>
+            {% if user.is_authenticated and user.is_staff %}
+            <a href="{% url 'product_update' product_id=product.id %}">Update</a>
+            <a href="{% url 'product_delete' product_id=product.id %}">Delete</a>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -100,6 +100,9 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
+                    {% if user.is_authenticated and user.is_staff %}
+                    <li class="nav-item"><a href="{% url 'product_create' %}">Create Product</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
