@@ -92,6 +92,7 @@ TEMPLATES = [
                 'boardom_be_gone.context_processors.sections_processor',
                 'boardom_be_gone.context_processors.subsections_processor',
                 'boardom_be_gone.context_processors.products_processor',
+                'boardom_be_gone.context_processors.basket_count',
             ],
         },
     },
