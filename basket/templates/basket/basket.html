@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<h1>Your Basket</h1>
+{% for item in basket.items.all %}
+<div class="border border-dark p-3 mb-3">
+    <h2>{{ item.product.name }}</h2>
+    <p>Price: €{{ item.product.price }}</p>
+    <p>Quantity: {{ item.quantity }}</p>
+    <p>Subtotal: €{{ item.subtotal }}</p>
+    <form method="post" action="{% url 'remove_from_basket' basketitem_id=item.id %}">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Remove</button>
+    </form>
+</div>
+{% endfor %}
+<p>Total Price: €{{ basket.total_price }}</p>
+<a href="#" class="btn btn-primary">Order Now</a>
+
+{% endblock %}

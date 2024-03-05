@@ -20,7 +20,7 @@
                     <p>{{ item.product.description }}</p>
 
 
-                    <form method="post">
+                    <form method="post" action="{% url 'add_to_basket' product_id=item.product.id %}">
                         {% csrf_token %}
                         <button class="btn btn-primary btn-block" type="submit">Add to Basket</button>
                     </form>

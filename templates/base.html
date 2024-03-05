@@ -101,8 +101,14 @@
                     </li>
                     {% endif %}
                     {% if user.is_authenticated and user.is_staff %}
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'product_create' %}">Create Product</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page"
+                            href="{% url 'product_create' %}">Create Product</a></li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'view_basket' %}">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i> {% if basket_count > 0 %} <span class="badge badge-pill badge-primary">{{ basket_count }}</span> {% endif %}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

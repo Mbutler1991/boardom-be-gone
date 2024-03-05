@@ -16,7 +16,10 @@
             <p>Rating: {{ product.rating }} <i data-star="{{ product.rating }}"></i></p>
             <p>{{ product.description }}</p>
             {% if product.in_stock %}
-            <a href="#" class="btn btn-primary">Add to Basket</a>
+            <form method="post" action="{% url 'add_to_basket' product_id=product.id %}">
+                {% csrf_token %}
+                <button class="btn btn-primary btn-block" type="submit">Add to Basket</button>
+            </form>
             {% else %}
             <p class="text-danger">Sorry, this item is currently out of stock.</p>
             {% endif %}

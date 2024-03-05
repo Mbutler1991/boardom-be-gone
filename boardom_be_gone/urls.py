@@ -22,6 +22,7 @@ urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
+    path("basket/", include("basket.urls"), name="basket-urls"),
     path("contact/", include("contact.urls"), name="contact-urls"),
     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
     path('product/create/', views.product_create, name='product_create'),
