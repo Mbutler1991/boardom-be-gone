@@ -16,7 +16,7 @@
             <p>Rating: {{ product.rating }} <i data-star="{{ product.rating }}"></i></p>
             <p>{{ product.description }}</p>
             {% if product.in_stock %}
-            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-primary">Add to Basket</a>
             {% else %}
             <p class="text-danger">Sorry, this item is currently out of stock.</p>
             {% endif %}

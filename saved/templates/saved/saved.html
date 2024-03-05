@@ -17,12 +17,12 @@
 
                     <h2>{{ item.product.name }}</h2>
                     <p>Price: €{{ item.product.price }}</p>
-                    <p>Description: {{ item.product.description }}</p>
+                    <p>{{ item.product.description }}</p>
 
 
                     <form method="post">
                         {% csrf_token %}
-                        <button class="btn btn-primary btn-block" type="submit">Buy Now</button>
+                        <button class="btn btn-primary btn-block" type="submit">Add to Basket</button>
                     </form>
 
                     <form method="post" action="{% url 'remove_from_saved' saved_id=item.id %}">
