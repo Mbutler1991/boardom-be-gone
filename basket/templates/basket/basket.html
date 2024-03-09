@@ -4,10 +4,10 @@
 
 {% load static %}
 
-<h1>Your Basket</h1>
+<h1 class="text-center">Your Basket</h1>
 {% for item in basket.items.all %}
-<div class="border border-dark p-3 mb-3">
-    <h2>{{ item.product.name }}</h2>
+<div class="border border-dark p-3 mb-3 col-12 col-l-6">
+    <h4>{{ item.product.name }}</h4>
     <p>Price: €{{ item.product.price }}</p>
     <p>Quantity: {{ item.quantity }}</p>
     <p>Subtotal: €{{ item.subtotal }}</p>
