@@ -9,9 +9,9 @@ from django.conf import settings
 def order(request):
     try:
         basket = Basket.objects.get(user=request.user)
-        basket_items = basket.items.all()  # Fetch all items in the basket
+        basket_items = basket.items.all()  
         stripe_public_key = settings.STRIPE_PUBLIC_KEY
-        grand_total_price = basket.total_price()  # Calculate grand total from basket
+        grand_total_price = basket.total_price() 
         if request.method == 'POST':
             order_form = OrderForm(request.POST)
             if order_form.is_valid():
@@ -55,23 +55,17 @@ def calculate_total_amount(basket):
 
 def process_payment(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
-    # Retrieve payment method ID from the form submission
     payment_method_id = request.POST.get('payment_method_id')
     
     try:
-        # Confirm the payment intent using the payment method ID
         stripe.PaymentIntent.confirm(
             payment_method_id,
             payment_intent_id=request.session.get('payment_intent_id')
         )
-        # If payment is successful, mark the order as paid and complete
-        # Example: order.payment_status = 'paid'
         return JsonResponse({'success': True})
     except stripe.error.CardError as e:
-        # Handle card errors
         error_msg = e.error.message
         return JsonResponse({'success': False, 'error_msg': error_msg}, status=400)
     except Exception as e:
-        # Handle other errors
         error_msg = str(e)
         return JsonResponse({'success': False, 'error_msg': error_msg}, status=500)
