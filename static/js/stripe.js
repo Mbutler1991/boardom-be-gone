@@ -3,7 +3,9 @@ console.log('test');
 document.addEventListener('DOMContentLoaded', function() {
     var stripe = Stripe('{{ stripe_public_key }}');
     var elements = stripe.elements();
-    var cardElement = elements.create('card');
+    var cardElement = elements.create('card', {
+        hidePostalCode: true,
+    });
     
     cardElement.mount('#card-element');
 
