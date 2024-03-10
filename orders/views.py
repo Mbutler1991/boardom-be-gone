@@ -7,23 +7,28 @@ import stripe
 from django.conf import settings
 
 def order(request):
-    basket_items = Basket.objects.all() 
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY  
-    if request.method == 'POST':
-        order_form = OrderForm(request.POST)
-        if order_form.is_valid():
-            order = order_form.save()
-            for item in basket_items:
-                order_line_item = OrderLineItem(
-                    order=order,
-                    product=item.product,  
-                    quantity=item.quantity
-                )
-                order_line_item.save()
-            return render(request, 'orders/order_complete.html')  
-    else:
-        order_form = OrderForm()
-    return render(request, 'orders/order.html', {'order_form': order_form, 'stripe_public_key': stripe_public_key, 'basket_items': basket_items})
+    try:
+        basket = Basket.objects.get(user=request.user)
+        basket_items = basket.items.all()  # Fetch all items in the basket
+        stripe_public_key = settings.STRIPE_PUBLIC_KEY
+        grand_total_price = basket.total_price()  # Calculate grand total from basket
+        if request.method == 'POST':
+            order_form = OrderForm(request.POST)
+            if order_form.is_valid():
+                order = order_form.save()
+                for item in basket_items:
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=item.product,
+                        quantity=item.quantity
+                    )
+                    order_line_item.save()
+                return render(request, 'orders/order_complete.html')
+        else:
+            order_form = OrderForm()
+        return render(request, 'orders/order.html', {'order_form': order_form, 'stripe_public_key': stripe_public_key, 'basket_items': basket_items, 'grand_total_price': grand_total_price})
+    except Basket.DoesNotExist:
+        return HttpResponseBadRequest('Basket does not exist')
 
 def create_payment_intent(request):
     basket = request.session.get('basket', {})

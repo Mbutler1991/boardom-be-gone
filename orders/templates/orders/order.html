@@ -26,12 +26,11 @@
                     <div class="col-md-6">
                         <div class="p-3">
                             <h4>Basket Summary</h4>
-                            <!-- Display basket summary here -->
+                        
                             {% for item in basket_items %}
                             <p>{{ item.product.name }} x {{ item.quantity }} - {{ item.product.price }}</p>
                             {% endfor %}
                             <hr>
-                            <p>Delivery: $5.99</p>
                             <h4>Total: {{ grand_total_price }}</h4>
                         </div>
                     </div>
