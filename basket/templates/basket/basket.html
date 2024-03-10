@@ -18,6 +18,6 @@
 </div>
 {% endfor %}
 <p>Total Price: €{{ basket.total_price }}</p>
-<a href="#" class="btn btn-primary">Order Now</a>
+<a href="{% url 'order' %}" class="btn btn-primary">Order Now</a>
 
 {% endblock %}
