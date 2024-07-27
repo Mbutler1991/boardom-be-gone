@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="text-center">{{ subsection.name }}</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+    {% for product in products %}
+    <div class="col-10 col-lg-5 m-1">
+        <div class="card text-center">
+            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top resize" src="{{ product.image.url }}" alt="{{ product.title }}"></a>
+            <div class="card-body bg-dark text-white">
+                <a href="{% url 'product_detail' product.id %}"><h5 class="card-title">{{ product.name }}</h5></a>
+                {% if product.in_stock %}
+                    <p class="card-text text-success">Item in stock</p>
+                {% else %}
+                    <p class="card-text text-danger">Sorry, item is not in stock. Please check back later.</p>
+                {% endif %}
+                <p class="card-text"><i data-star="{{ product.rating }}"></i></p>
+                <p class="card-text">Price: €{{ product.price }}</p>
+                <a class="btn btn-secondary" href="{% url 'product_detail' product.id %}">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

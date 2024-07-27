@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-3 text-center">
+            <h2>Boardom Begone</h2>
+            <p class="my-3 text-center">
+                Welcome to our shop we have a selection of games to suit everybody from the casual player to the
+                hardcore gamer. We offer free delivery on all products and a 30 day money back guarantee.
+                If you are looking for a game to play with friends or family we have you covered.
+                If you can't find what you are looking for please get in touch and we will do our best to help.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-3 text-center">
+            <div id="productCarousel" class="carousel slide resized justify-content-center" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for product in random_products %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ product.image.url }}" class="text-center" alt="{{ product.name }}">
+                        <br/>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ product.name }}</h5>
+                            <p>{{ product.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    {% endblock %}

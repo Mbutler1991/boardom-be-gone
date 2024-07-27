@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-8 my-3 text-center">
+            <h2>About Us</h2>
+            <p class="my-3">
+                Boardom Be Gone is an Irish business,
+                we sell board games and card games for all ages and interests.
+                We are a family run business and we are passionate about board games and card games.
+                We have a number of different types of games, such as tabletop games, strategy games,
+                family games and more. We have been in business for over 10 years and we have a lot
+                of experience in the industry. We are always looking for new games to add to our collection,
+                so if you have any suggestions, please let us know. We are always happy to help you find the
+                perfect game for you.
+            </p>
+        </div>
+        <div class="col-4 d-none d-lg-block">
+            <img src="{% static 'images/family.jpg' %}" class="img-fluid" alt="About Us">
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-3">
+    <h1 class="text-center">Place Your Order</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="p-3 border border-dark rounded">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="p-3" method="POST" id="order-form">
+                            {% csrf_token %}
+                            {{ order_form.as_p }}
+                            <div id="payment-form" class="mt-3">
+                                <p>All orders are payment on delivery at this time.</p>
+                            </div>
+                            <button id="submit-button" class="btn btn-primary mt-3">Pay Now</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3">
+                            <h4>Basket Summary</h4>
+                        
+                            {% for item in basket_items %}
+                            <p>{{ item.product.name }} x {{ item.quantity }} - {{ item.product.price }}</p>
+                            {% endfor %}
+                            <hr>
+                            <h4>Total: {{ grand_total_price }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn boardom_be_gone.wsgi
