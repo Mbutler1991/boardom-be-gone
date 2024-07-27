@@ -29,6 +29,11 @@ a {
     cursor: pointer;
 }
 
+.resize {
+    height: 20rem;
+    width: auto;
+}
+
 .carousel-item img {
     background-color: white;
     max-height: 20rem; /* Adjust this value as needed */
