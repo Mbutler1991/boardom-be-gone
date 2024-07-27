@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Order form -->
 <div class="container py-3">
     <h1 class="text-center">Place Your Order</h1>
     <div class="row justify-content-center">
@@ -20,6 +21,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="p-3">
+                            <!-- summary of items in basket with price -->
                             <h4>Basket Summary</h4>
                         
                             {% for item in basket_items %}
