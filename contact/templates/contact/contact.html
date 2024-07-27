@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+<!-- opening contact us message -->
 <div class="row justify-content-center">
     <div class="col-12 col-md-6 my-5">
         <h2>Contact Us</h2>
@@ -15,6 +15,7 @@
             If there is a game you would like to see on our site, please let us know.
         </p>
 
+        <!-- form to populate from contact/forms.py -->
         <form method="post">
             {{ form | crispy }}
             {% csrf_token %}

@@ -1,3 +1,4 @@
+/* basic body styles */
 body {
     min-height: 100vh;
     max-width: 100vw;
@@ -5,6 +6,7 @@ body {
     background-image: url('../images/parchment.jpg');
 }
 
+/* basic styles for footer and main */
 main {
     min-height: 82%;
 }
@@ -13,6 +15,7 @@ footer {
     bottom: 0;
 }
 
+/* setting fonts */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cinzel', serif;
     font-weight: bold;
@@ -24,19 +27,22 @@ p {
     font-size: 150%;
 }
 
+/* style for links */
 a {
     text-decoration: none;
     cursor: pointer;
 }
 
+/* resizing images to add uniformity */
 .resize {
     height: 20rem;
     width: auto;
 }
 
+/* carousel styles for homepage */
 .carousel-item img {
     background-color: white;
-    max-height: 20rem; /* Adjust this value as needed */
+    max-height: 20rem; 
     width: auto;
     flex-direction: column;
     align-items: center;
@@ -45,8 +51,8 @@ a {
 .carousel-caption {
     text-align: center;
     display: block;
-    background: rgba(0, 0, 0, 0.5); /* Optional: adds a semi-transparent background */
-    color: white; /* Optional: sets the text color */
+    background: rgba(0, 0, 0, 0.5); 
+    color: white; 
     padding: 10px;
 }
 
@@ -128,7 +134,7 @@ a {
   [data-star^="4.9"]::after{width:98%}
   [data-star^="5"]::after{width:100%}
 
-
+/* media queries for navbar */
   @media (max-width: 1400px) {
     .navbar-nav .nav-link {
         font-size: 13px;
