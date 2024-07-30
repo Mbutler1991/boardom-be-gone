@@ -19,3 +19,11 @@ This is an online board game shop. It is designed to have a good range of games 
         1. As Staff, I want to easily add and remove stock.
         2. As Staff, I want to be able to update listings on the site including stock availability.
         3. As Staff, I want to have the ability to easily reply to customer messages.
+
+-   ### Design
+    -   #### Colour Scheme
+        -   The main colours used are black, white and grey
+    -   #### Typography
+        -   The Shadows Into Light font is used as the main font throughout the website for all paragraphs and links, and the Cinzel font is used for headings.
+    -   #### Imagery
+        -   Imagery is important. I used a stock parchment image as the background for the website to give it that RPG parchment effect. 
