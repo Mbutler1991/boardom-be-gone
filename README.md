@@ -29,3 +29,15 @@ This is an online board game shop. It is designed to have a good range of games 
         -   Imagery is important. I used a stock parchment image as the background for the website to give it that RPG parchment effect. 
     -   #### Wireframes
         -   [View](static/images/Boardom-Be-Gone_Wireframes.bmpr)
+     
+## Features
+
+-   Responsive on all device sizes
+
+-   Interactive elements
+
+## Technologies Used
+
+-   HTML, CSS, Django, Bootstrap, JQuery, JavaScript, Git, Github, Kanban, Canva, Cloudinary, Crispy Forms
+
+
