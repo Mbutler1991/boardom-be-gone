@@ -27,3 +27,5 @@ This is an online board game shop. It is designed to have a good range of games 
         -   The Shadows Into Light font is used as the main font throughout the website for all paragraphs and links, and the Cinzel font is used for headings.
     -   #### Imagery
         -   Imagery is important. I used a stock parchment image as the background for the website to give it that RPG parchment effect. 
+    -   #### Wireframes
+        -   [View](static/images/Boardom-Be-Gone_Wireframes.bmpr)
