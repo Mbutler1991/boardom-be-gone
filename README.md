@@ -40,4 +40,11 @@ This is an online board game shop. It is designed to have a good range of games 
 
 -   HTML, CSS, Django, Bootstrap, JQuery, JavaScript, Git, Github, Kanban, Canva, Cloudinary, Crispy Forms
 
+## Testing
 
+-   W3c HTML validator
+  ![W3c Validator](static/images/w3c-validator.jpg)
+-   Jigsaw CSS validator
+  ![Jigsaw Validator](static/images/jigsaw.jpg)
+-   JSHint showed no errors in JavaScript code
+-   CI Python Linter showed no major errors, some minor errors, ie line too long in models.
